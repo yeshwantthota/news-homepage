@@ -3,6 +3,7 @@ import logo from "./assets/images/logo.svg";
 import menuIcon from "./assets/images/icon-menu.svg";
 import menuClose from "./assets/images/icon-menu-close.svg";
 import homeImageMobile from "./assets/images/image-web-3-mobile.jpg";
+import homeImageDesktop from "./assets/images/image-web-3-desktop.jpg";
 import img1 from "./assets/images/image-retro-pcs.jpg";
 import img2 from "./assets/images/image-top-laptops.jpg";
 import img3 from "./assets/images/image-gaming-growth.jpg";
@@ -35,7 +36,7 @@ function App() {
 
           {open && (
             <>
-              <div className="absolute w-2/3 top-14 right-0 bg-white">
+              <div className="absolute w-2/3 top-14 right-0 bg-white ">
                 <div className="flex flex-col gap-8  h-screen p-4 cursor-pointer">
                   <span className="hover:text-red-300">Home</span>
                   <span className="hover:text-red-300">New</span>
@@ -50,13 +51,18 @@ function App() {
           )}
         </div>
 
-        <div className="main  flex flex-col ">
-          <div className="item border-b-2 border-b-white">
-            <img src={homeImageMobile} alt="" />
+        <div className="main  flex flex-col md:grid md:grid-rows-3 md:grid-cols-3 md:gap-y-5 md:gap-x-2">
+          <div className="item border-b-2 border-b-white md:row-span-2 md:col-span-2">
+            <img className=" md:hidden" src={homeImageMobile} alt="" />
+            <img
+              className="hidden md:block h-2/3 w-max"
+              src={homeImageDesktop}
+              alt=""
+            />
             <h1 className="text-5xl font-bold py-4">
               The Bright Future of Web 3.0?
             </h1>
-            <p className="font-medium">
+            <p className="font-medium flex flex-wrap">
               {" "}
               We dive into the next evolution of the web that claims to put the
               power of the platforms back into the hands of the people. But is
@@ -66,7 +72,7 @@ function App() {
               READ MORE
             </button>
           </div>
-          <div className="item bg-zinc-900 p-3 mb-5">
+          <div className="item bg-zinc-900 p-3 mb-5 md:row-span-2">
             <h1 className="text-2xl text-yellow-400">New</h1>
             <div className="py-2">
               <div className="text-white">
@@ -98,7 +104,7 @@ function App() {
             </div>
           </div>
 
-          <div className="item flex h-[100px] items-center gap-5 my-2">
+          <div className="item flex h-[100px] items-center gap-5 my-2 md:row-span-1 md:col-span-1">
             <img src={img1} className="h-[100px]" alt="" />
             <div className="">
               <h3 className="text-xl font-bold mb-2"> Reviving Retro PCs</h3>
